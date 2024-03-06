@@ -10,7 +10,7 @@
 - Execute SonarQube Test.
 - Upload Build Artifact to Sonatype Nexus.
 - Build Docker Image.
-- Push Docker Image to Registry.
+- Push Docker Image to AWS ECR Registry.
 - Remove Docker Image Locally in Jenkins.
 - Update Docker Image Tag in Kubernetes Manifest.
 - Deploy Application into Kubernetes Cluster.
@@ -48,18 +48,18 @@ Java and Maven should be installed as a prerequisite to Build Project Code.
 
 ## Build Docker Image
 ```bash
-  docker build -t devopscloudautomation/webapplication:${buildNumber} .
+  docker build -t 236536187964.dkr.ecr.ap-south-1.amazonaws.com/webapplication:${buildNumber} .
 ```
 
-## Push Docker Image to Registry
+## Push Docker Image to AWS ECR Registry
 ```bash
-  docker login -u devopscloudautomation -p ${Docker_Hub_Password}
-  docker push devopscloudautomation/webapplication:${buildNumber}
+  aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 236536187964.dkr.ecr.ap-south-1.amazonaws.com
+  docker push 236536187964.dkr.ecr.ap-south-1.amazonaws.com/webapplication:${buildNumber}
 ```
 
 ## Remove Docker Image Locally in Jenkins Server
 ```bash
-  docker rmi -f devopscloudautomation/webapplication:${buildNumber}
+  docker rmi -f 236536187964.dkr.ecr.ap-south-1.amazonaws.com/webapplication:${buildNumber}
 ```
 
 ## Update Docker Image Tag in Kubernetes Manifest
