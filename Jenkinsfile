@@ -60,15 +60,12 @@ pipeline
             }
         }
 
-        stage('Push Docker Image')
+        stage('Push Docker Image to AWS ECR Registry')
         {
             steps()
             {
-                withCredentials([string(credentialsId: 'Docker_Hub_Password', variable: 'Docker_Hub_Password')])
-                {
-                    sh 'docker login -u devopscloudautomation -p ${Docker_Hub_Password}'
-                }
-                sh 'docker push devopscloudautomation/webapplication:${buildNumber}'
+                sh "aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 236536187964.dkr.ecr.ap-south-1.amazonaws.com"
+				sh "docker push 236536187964.dkr.ecr.ap-south-1.amazonaws.com/webapplication:${buildNumber}"
             }
         }
 
@@ -76,7 +73,7 @@ pipeline
         {
             steps()
             {
-                sh 'docker rmi -f devopscloudautomation/webapplication:${buildNumber}'
+                sh 'docker rmi -f 236536187964.dkr.ecr.ap-south-1.amazonaws.com/webapplication:${buildNumber}'
             }
         }
 
