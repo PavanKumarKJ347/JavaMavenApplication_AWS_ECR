@@ -56,7 +56,7 @@ pipeline
         {
             steps()
             {
-                sh 'docker build -t devopscloudautomation/webapplication:${buildNumber} .'
+                sh 'docker build -t 236536187964.dkr.ecr.ap-south-1.amazonaws.com/webapplication:${buildNumber} .'
             }
         }
 
