@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: webpage-container
-        image: devopscloudautomation/webapplication:Build_Tag
+        image: 236536187964.dkr.ecr.ap-south-1.amazonaws.com/webapplication:Build_Tag
         ports:
         - containerPort: 8080
 ---
