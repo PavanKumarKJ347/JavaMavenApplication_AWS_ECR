@@ -89,8 +89,6 @@ pipeline
         {
             steps()
             {
-                sh "aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 236536187964.dkr.ecr.ap-south-1.amazonaws.com"
-                sh "docker pull 236536187964.dkr.ecr.ap-south-1.amazonaws.com/webapplication:${buildNumber}"
                 sh 'kubectl delete deployment webpage-deployment -n test || true'
                 sh 'kubectl apply -f Deployment.yaml'
             }
