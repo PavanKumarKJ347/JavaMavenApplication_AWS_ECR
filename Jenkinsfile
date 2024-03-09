@@ -91,7 +91,31 @@ pipeline
             {
                 sh 'kubectl delete deployment webpage-deployment -n test || true'
                 sh 'kubectl apply -f Deployment.yaml'
+                
+                sh 'helm uninstall helmwebapplication -n development || true'
+                sh 'helm install helmwebapplication helmwebapplication -n development'
             }
+        }
+    }
+    
+    post
+    {
+        always
+        {
+            cleanWs()
+        }
+        
+        success
+        {
+            slackSend channel: 'devopscloudautomation',
+            color: 'good',
+            message: "${currentBuild.currentResult} ✅\n Job Name: ${env.JOB_NAME} || Build Number: ${env.BUILD_NUMBER}\n Application is Successfully Deployed to Production Environment\n More Information Available at: ${env.BUILD_URL}"
+            }
+        failure
+        {
+            slackSend channel: 'devopscloudautomation',
+            color: 'good',
+            message: "${currentBuild.currentResult} ⛔️\n Job Name: ${env.JOB_NAME} || Build Number: ${env.BUILD_NUMBER}\n Application Deployment is Failed to Production Environment\n More Information Available at: ${env.BUILD_URL}"
         }
     }
 }

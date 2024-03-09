@@ -5,10 +5,10 @@
 replicaCount: 2
 
 image:
-  repository: devopscloudautomation/webapplication
+  repository: 236536187964.dkr.ecr.ap-south-1.amazonaws.com/webapplication
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "1"
 
 imagePullSecrets: []
 nameOverride: ""
