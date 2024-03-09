@@ -110,7 +110,8 @@ pipeline
             slackSend channel: 'awsdevopscloudautomation',
             color: 'good',
             message: "${currentBuild.currentResult} ✅\n Job Name: ${env.JOB_NAME} || Build Number: ${env.BUILD_NUMBER}\n Application is Successfully Deployed to Production Environment\n More Information Available at: ${env.BUILD_URL}"
-            }
+        }
+        
         failure
         {
             slackSend channel: 'awsdevopscloudautomation',
