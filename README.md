@@ -23,7 +23,7 @@
 # Project Execution
 ## Git Checkout
 ```bash
-  git branch: 'main', url: 'https://github.com/DevOpsCloudAutomation/JavaDockerApplication.git'
+  git branch: 'main', url: 'https://github.com/DevOpsCloudAutomation/JavaMavenApplication_AWS_ECR.git'
 ```
 
 ## Build Project
