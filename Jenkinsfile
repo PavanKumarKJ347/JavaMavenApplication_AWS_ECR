@@ -18,7 +18,7 @@ pipeline
         {
             steps()
             {
-                git branch: 'main', url: 'https://github.com/DevOpsCloudAutomation/JavaDockerApplication.git'
+                git branch: 'main', url: 'https://github.com/DevOpsCloudAutomation/JavaMavenApplication_AWS_ECR.git'
             }
         }
 
@@ -56,7 +56,7 @@ pipeline
         {
             steps()
             {
-                sh 'docker build -t 236536187964.dkr.ecr.ap-south-1.amazonaws.com/application:${buildNumber} .'
+                sh 'docker build -t 236536187964.dkr.ecr.ap-south-1.amazonaws.com/webapplication:${buildNumber} .'
             }
         }
 
@@ -65,7 +65,7 @@ pipeline
             steps()
             {
                 sh "aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 236536187964.dkr.ecr.ap-south-1.amazonaws.com"
-                sh "docker push 236536187964.dkr.ecr.ap-south-1.amazonaws.com/application:${buildNumber}"
+                sh "docker push 236536187964.dkr.ecr.ap-south-1.amazonaws.com/webapplication:${buildNumber}"
             }
         }
 
@@ -73,7 +73,7 @@ pipeline
         {
             steps()
             {
-                sh 'docker rmi -f 236536187964.dkr.ecr.ap-south-1.amazonaws.com/application:${buildNumber}'
+                sh 'docker rmi -f 236536187964.dkr.ecr.ap-south-1.amazonaws.com/webapplication:${buildNumber}'
             }
         }
 
