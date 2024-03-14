@@ -16,7 +16,7 @@
 - Deploy Application into Kubernetes Cluster.
 - Send CICD Pipeline Execution Status to Slack.
 
-### Tools and Technologies used are Java, Git, GitHub, Maven, SonarQube, Jenkins, Docker, DockerHub and Kubernetes.
+### Tools and Technologies used are Java, Git, GitHub, Maven, SonarQube, Jenkins, Docker, AWS ECR Registry and Kubernetes.
 
 ![CICD](https://github.com/DevOpsCloudAutomation/Java_Docker/assets/123757746/085ef572-bd9d-4d05-b710-4fc2a0646d39)
   
