@@ -89,11 +89,11 @@ pipeline
         {
             steps()
             {
-                sh 'kubectl delete deployment webpage-deployment -n test || true'
+                sh 'kubectl delete deployment webpage-deployment -n production || true'
                 sh 'kubectl apply -f Deployment.yaml'
                 
-                sh 'helm uninstall helmwebapplication -n development || true'
-                sh 'helm install helmwebapplication helmwebapplication -n development'
+                sh 'helm uninstall helmwebapplication -n production || true'
+                sh 'helm install helmwebapplication helmwebapplication -n production'
             }
         }
     }
