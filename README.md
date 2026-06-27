@@ -1,7 +1,7 @@
 
 # End to End CICD Pipeline Project
 
-## This Project can be used to Build an End to End CICD Pipeline.
+## This Project Can be Used to Build an End to End CICD Pipeline.
 
 ## CICD Pipeline Stages
 
@@ -16,10 +16,8 @@
 - Deploy Application into Kubernetes Cluster.
 - Send CICD Pipeline Execution Status to Slack.
 
-### Tools and Technologies used are Java, Git, GitHub, Maven, SonarQube, Sonatype Nexus, Jenkins, Docker, AWS ECR Registry, Kubernetes and Amazon Web Services.
+### Tools and Technologies Used are Java, Git, GitHub, Maven, SonarQube, Sonatype Nexus, Jenkins, Docker, AWS ECR Registry, Kubernetes and Amazon Web Services.
 
-![CICD](https://github.com/DevOpsCloudAutomation/Java_Docker/assets/123757746/085ef572-bd9d-4d05-b710-4fc2a0646d39)
-  
 # Project Execution
 ## Git Checkout
 ```bash
@@ -28,13 +26,13 @@
 
 ## Build Project
 
-Build Automation Tool Maven can be used to build this project as this project is developed using Java Programming Language.
+Build Automation Tool Maven Can be Used to Build This Project as This Project is Developed Using Java Programming Language.
 
 ```bash
   mvn clean package
 ```
-Note:  
-Java and Maven should be installed as a prerequisite to Build Project Code.
+Note:
+Java and Maven Should be Installed as a Prerequisite to Build Project Code.
 
 ## Execute SonarQube Test
 ```bash
@@ -74,4 +72,4 @@ Java and Maven should be installed as a prerequisite to Build Project Code.
   helm install helmwebapplication helmwebapplication -n production
 ```
 **Note**<br>
-**Application can be deployed to Kubernetes Cluster using Kubernetes Manifest Files as well as Helm Chart.**
+**Application Can be Deployed to Kubernetes Cluster Using Kubernetes Manifest Files as well as Helm Chart.**
