@@ -26,13 +26,13 @@
 
 ## Build Project
 
-Build Automation Tool Maven Can be Used to Build This Project as This Project is Developed Using Java Programming Language.
+**Build Automation Tool Maven Can be Used to Build This Project as This Project is Developed Using Java Programming Language.**
 
 ```bash
   mvn clean package
 ```
-Note:
-Java and Maven Should be Installed as a Prerequisite to Build Project Code.
+
+**Java and Maven Should be Installed as a Prerequisite to Build Project Code.**
 
 ## Execute SonarQube Test
 ```bash
@@ -71,5 +71,4 @@ Java and Maven Should be Installed as a Prerequisite to Build Project Code.
 
   helm install helmwebapplication helmwebapplication -n production
 ```
-**Note**<br>
-**Application Can be Deployed to Kubernetes Cluster Using Kubernetes Manifest Files as well as Helm Chart.**
+## Application Can be Deployed to Kubernetes Cluster Using Kubernetes Manifest Files as well as Helm Chart.
